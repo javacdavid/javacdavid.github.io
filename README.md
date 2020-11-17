@@ -1,83 +1,39 @@
-search: true
-
-code_clipboard: true
----
-
 # Introduction
 
 Bienvenido a la aplicacion de Operacion-fuego-quasar. Esta Api consiste en el manejo de una situación ficticia para el universo de Star Wars, en el cual es necesario interceptar y decodificar, por parte de 3 satélites rebeldes, los mensajes que emite una nave imperial, rodeada de asteroides. También, a partir del conocimiento de la distancia que cada satélite tiene a la nave, la Api determinará la ubicación en coordenadas(x, y) de la misma.
 
 Esta documentación fue creada con [Slate](https://github.com/slatedocs/slate).
 
-# Authentication
-
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
+# topsecret
 
 ```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here" \
-  -H "Authorization: meowmeowmeow"
+https://operation-quasar-fire.herokuapp.com/api/v1/spaceship-interceptor/topsecret/
+```
+el request body debe respetar el siguiente formato
+
+```json
+{
+    "satellites" :[
+        {
+            "name" : "Kenobi",
+            "distance" : 500.0,
+            "message" :["help!", "", "", "support", "", "we", "", "", "","asteroids"]
+        },
+        {
+            "name" : "Skywalker",
+            "distance" : 110.0,
+            "message" :["", "", "", "support", "here,", "", "are", "", "by", ""]
+        },
+        {
+            "name" : "Sato",
+            "distance" : 556.3,
+            "message" :["", "we", "need", "", "", "", "", "surrounded", "", ""]
+        }
+    ]
+
+}
 ```
 
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
 
 > The above command returns JSON structured like this:
 
