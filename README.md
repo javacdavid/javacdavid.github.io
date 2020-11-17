@@ -2,10 +2,10 @@
 
 Bienvenido a la aplicacion de Operacion-fuego-quasar. Esta Api consiste en el manejo de una situación ficticia para el universo de Star Wars, en el cual es necesario interceptar y decodificar, por parte de 3 satélites rebeldes, los mensajes que emite una nave imperial, rodeada de asteroides. También, a partir del conocimiento de la distancia que cada satélite tiene a la nave, la Api determinará la ubicación en coordenadas(x, y) de la misma.
 
-Esta documentación fue creada con [Slate](https://github.com/slatedocs/slate).
-
 A continuación se presentan los servicios disponibles, especificando su funcionalidad y uso
-## HTTP Request
+
+### HTTP Requests
+
 ### POST topsecret
 
 El siguiente servicio descifra el mensaje que emite la nave y calcula la ubicación a partir de los mensajes y las distancias parametrizadas
@@ -40,7 +40,7 @@ el request body debe respetar el siguiente formato
 
 
 > La respuesta para este request será, por ejemplo:
-
+#### 200
 ```json
 {
     "location": {
@@ -76,7 +76,7 @@ el request body tendrá el siguiente payload
 
 
 > La respuesta para este request será el objeto almacenado:
-
+#### 200
 ```json
 {
     "name": "Skywalker",
@@ -117,6 +117,7 @@ el mensaje y la distancia de la nave imperial
 
 > La respuesta para este request será la misma que brinda el servicio topsecret
 
+#### 200
 ```json
 {
     "location": {
@@ -127,9 +128,14 @@ el mensaje y la distancia de la nave imperial
 }
 ```
 
-### RESPONSE CODES
+### Error codes
 
 Codigo | Exception | Descripcion
 --------- | ----------- | ---------
 404 | MessageNotFoundException | no se ha podido decodificar el mensaje de la nave imperial
-404 | SpaceShipNotFoundException | no se ha podido calcular la distancia a la nave imperial
+404 | LocationNotFoundException | no se ha podido calcular la distancia a la nave imperial
+404 | DataSateliteRepositoryException | un error a nivel base de datos en el momento de almacenar
+404 | SateliteNotFoundException | no se ha podido encontrar o reconocer el satelite parametrizado
+400 | BadRequest | no se ingresaron correctamente los parámetros
+500 | Internal_Server_Error | error de servidor
+
