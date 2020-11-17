@@ -4,7 +4,7 @@ Bienvenido a la aplicacion de Operacion-fuego-quasar. Esta Api consiste en el ma
 
 Esta documentación fue creada con [Slate](https://github.com/slatedocs/slate).
 
-
+A continuación se presentan los servicios disponibles, especificando su funcionalidad y uso
 ## HTTP Request
 ### POST topsecret
 
@@ -50,7 +50,7 @@ el request body debe respetar el siguiente formato
     "message": "help! we need support here, we are surrounded by asteroids"
 }
 ```
-## HTTP Request
+
 ### POST topsecret_split
 
 Esta api permite almacenar una instancia de datos del satelite
@@ -89,7 +89,6 @@ el request body tendrá el siguiente payload
 }
 ```
 
-## HTTP Request
 ### GET topsecret_split
 
 ```shell
