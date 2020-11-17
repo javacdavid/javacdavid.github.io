@@ -4,7 +4,7 @@ Bienvenido a la aplicacion de Operacion-fuego-quasar. Esta Api consiste en el ma
 
 A continuación se presentan los servicios disponibles, especificando su funcionalidad y uso
 
-### HTTP Requests
+## HTTP Requests
 
 ### POST topsecret
 
@@ -52,6 +52,8 @@ el request body debe respetar el siguiente formato
 ```
 
 
+
+
 ### POST topsecret_split
 
 Esta api permite almacenar una instancia de datos del satelite
@@ -91,6 +93,8 @@ el request body tendrá el siguiente payload
 ```
 
 
+
+
 ### GET topsecret_split
 
 ```shell
@@ -127,6 +131,8 @@ el mensaje y la distancia de la nave imperial
     "message": "help! we need support here, we are surrounded by asteroids"
 }
 ```
+
+
 
 ### Error codes
 
