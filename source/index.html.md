@@ -19,13 +19,11 @@ search: true
 code_clipboard: true
 ---
 
-# Introduction
+# Introduccion
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Bienvenido a la aplicacion de Operacion-fuego-quasar. Esta Api consiste en el manejo de una situación ficticia para el universo de Star Wars, en el cual es necesario interceptar y decodificar, por parte de 3 satélites rebeldes, los mensajes que emite una nave imperial, rodeada de asteroides. También, a partir del conocimiento de la distancia que cada satélite tiene a la nave, la Api determinará la ubicación en coordenadas(x, y) de la misma.
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
+Esta documentación fue creada con Slate.
 
 # Authentication
 
