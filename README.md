@@ -51,6 +51,7 @@ el request body debe respetar el siguiente formato
 }
 ```
 
+
 ### POST topsecret_split
 
 Esta api permite almacenar una instancia de datos del satelite
@@ -58,7 +59,7 @@ Esta api permite almacenar una instancia de datos del satelite
 ```shell
 https://operation-quasar-fire.herokuapp.com/api/v1/spaceship-interceptor/topsecret_split/{name}
 ```
-### URL Parameters
+#### URL Parameters
 
 Parameter | Description
 --------- | -----------
@@ -89,13 +90,14 @@ el request body tendrá el siguiente payload
 }
 ```
 
+
 ### GET topsecret_split
 
 ```shell
 https://operation-quasar-fire.herokuapp.com/api/v1/spaceship-interceptor/topsecret_split/{name}
 ```
 
-### URL Parameters
+#### URL Parameters
 
 Parameter | Description
 --------- | -----------
@@ -125,3 +127,9 @@ el mensaje y la distancia de la nave imperial
 }
 ```
 
+### RESPONSE CODES
+
+Codigo | Exception | Descripcion
+--------- | ----------- | ---------
+404 | MessageNotFoundException | no se ha podido decodificar el mensaje de la nave imperial
+404 | SpaceShipNotFoundException | no se ha podido calcular la distancia a la nave imperial
