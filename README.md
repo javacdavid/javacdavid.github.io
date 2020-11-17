@@ -1,10 +1,12 @@
-# Introduction
+# Introduccion
 
 Bienvenido a la aplicacion de Operacion-fuego-quasar. Esta Api consiste en el manejo de una situación ficticia para el universo de Star Wars, en el cual es necesario interceptar y decodificar, por parte de 3 satélites rebeldes, los mensajes que emite una nave imperial, rodeada de asteroides. También, a partir del conocimiento de la distancia que cada satélite tiene a la nave, la Api determinará la ubicación en coordenadas(x, y) de la misma.
 
 Esta documentación fue creada con [Slate](https://github.com/slatedocs/slate).
 
-# topsecret
+El siguiente servicio descifra el mensaje que emite la nave y calcula la ubicación a partir de los mensajes y las distancias parametrizadas
+
+# POST topsecret
 
 ```shell
 https://operation-quasar-fire.herokuapp.com/api/v1/spaceship-interceptor/topsecret/
@@ -35,25 +37,79 @@ el request body debe respetar el siguiente formato
 ```
 
 
-> The above command returns JSON structured like this:
+> La respuesta para este request será, por ejemplo:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
+{
+    "location": {
+        "x": -4.346184465246722,
+        "y": -134.21782045385874
+    },
+    "message": "help! we need support here, we are surrounded by asteroids"
+}
+```
+
+Esta api permite almacenar una instancia de datos del satelite
+
+# POST topsecret_split
+
+```shell
+https://operation-quasar-fire.herokuapp.com/api/v1/spaceship-interceptor/topsecret_split/Skywalker
+```
+el request body tendrá el siguiente payload
+
+```json
+{
+    "distance" : 110.0,
+    "message" :["", "", "un", "mensaje"]
+}
+```
+
+
+> La respuesta para este request será el objeto almacenado:
+
+```json
+{
+    "name": "Skywalker",
+    "distance": 110.0,
+    "message": [
+        "",
+        "",
+        "un",
+        "mensaje"
+    ]
+}
+```
+
+Esta api permite almacenar una instancia de datos del satelite
+
+# GET topsecret_split
+
+```shell
+https://operation-quasar-fire.herokuapp.com/api/v1/spaceship-interceptor/topsecret_split/Skywalker
+```
+el request body tendrá el mismo payload que el servicio anterior
+
+```json
+{        
+    "distance" : 110.0,
+    "message" :["", "", "", "support", "here,", "", "are", "", "by", ""]
+}
+```
+
+La diferencia es que este servicio utilizará los datos brindados en el body y buscará en la base de datos la información ya almacenada para calcular 
+el mensaje y la distancia de la nave imperial
+
+> La respuesta para este request será la misma que brinda el servicio topsecret
+
+```json
+{
+    "location": {
+        "x": -4.346184465246722,
+        "y": -134.21782045385874
+    },
+    "message": "help! we need support here, we are surrounded by asteroids"
+}
 ```
 
 This endpoint retrieves all kittens.
